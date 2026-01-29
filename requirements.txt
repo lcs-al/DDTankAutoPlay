@@ -11,3 +11,4 @@ PySimpleGUI==5.0.10
 python3-xlib==0.15
 pytweening==1.2.0
 rsa==4.9.1
+opencv-python

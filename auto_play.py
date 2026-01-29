@@ -24,6 +24,8 @@ class AutoPlay:
 
             elif self.check_if_match_is_finish():
                 break
+            
+            time.sleep(1)
 
         return
 
@@ -40,13 +42,14 @@ class AutoPlay:
                 pyautogui.leftClick(ready_button)
                 searching_game = pyautogui.locateOnScreen('assets\images\searching_solo_game.png', confidence=0.5)
                 searching_gvg = pyautogui.locateOnScreen('assets\images\searching_gvg.png', confidence=0.5)
-                if searching_game or searching_gvg != None:
+                if searching_game is not None or searching_gvg is not None:
                     time.sleep(2)
                     searching_game = pyautogui.locateOnScreen('assets\images\searching_solo_game.png', confidence=0.5)
                     searching_gvg = pyautogui.locateOnScreen('assets\images\searching_gvg.png', confidence=0.5)
-                    if searching_game or searching_gvg != None:
+                    if searching_game is not None or searching_gvg is not None:
                         print('Queue Started')
                         break
+            time.sleep(1)
         return
 
     def set_ready(self):
@@ -59,6 +62,7 @@ class AutoPlay:
                 if searching_gvg != None:
                     print('Queue Started')
                     break
+            time.sleep(1)
         return
 
     def wait_load(self):
@@ -68,6 +72,7 @@ class AutoPlay:
             match_is_started = image_coordinates != None
             if match_is_started:
                 print('Match Starting')
+            time.sleep(1)
         return
 
     def start(self, gama_mode, role):
