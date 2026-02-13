@@ -1,4 +1,4 @@
-import PySimpleGUI as sg
+import FreeSimpleGUI as sg
 from auto_play import AutoPlay
 from auto_click import AutoClick
 
